@@ -13,7 +13,7 @@ public class Calculator {
 
         case "1":
             System.out.println(
-                    "Which one?\n    1. Square\n    2. Square root\n    3. Cos\n    4. Sin \n    5. Log\n    6. Module");
+                    "Which one?\n    1. Square\n    2. Square root\n    3. Log");
             String monoOperator = System.console().readLine();
             System.out.print("Please enter a number: ");
             String number = System.console().readLine();
@@ -28,20 +28,11 @@ public class Calculator {
                 res = squareRoot(number);
                 break;
             case "3":
-                res = cosOperator(number);
-                break;
-            case "4":
-                res = sinOpertor(number);
-                break;
-            case "5":
                 res = log(number);
-                break;
-            case "6":
-                res = module(number);
                 break;
 
             default:
-                System.out.println("Wrong option. Select a number from 1 to 6.");
+                System.out.println("Wrong option. Select a number from 1 to 3.");
                 System.exit(0);
             }
             break;
@@ -145,14 +136,6 @@ public class Calculator {
         return Math.log(Double.valueOf(givenString));
     }
 
-    protected double sinOpertor(String givenString) {
-        return Math.sin(Double.valueOf(givenString));
-    }
-
-    protected double cosOperator(String givenString) {
-        return Math.cos(Double.valueOf(givenString));
-    }
-
     protected double square(String givenString) {
         return Double.valueOf(givenString) * Double.valueOf(givenString);
     }
@@ -160,10 +143,6 @@ public class Calculator {
     protected double squareRoot(String givenString) {
         nHandler.signTest(Double.valueOf(givenString));
         return Math.sqrt(Double.valueOf(givenString));
-    }
-
-    protected double module(String givenString) {
-        return Math.abs(Double.valueOf(givenString));
     }
 
     protected void showResult() {
