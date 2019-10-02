@@ -1,3 +1,6 @@
 [submodule "GitLink"]
 	path = GitLink
 	url = git://github.com/WolframResearch/GitLink
+[submodule "java-math-library"]
+	path = java-math-library
+	url = git://github.com/TilmanNeumann/java-math-library
