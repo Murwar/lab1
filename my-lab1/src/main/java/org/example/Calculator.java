@@ -53,7 +53,7 @@ public class Calculator {
 
         case "2":
             System.out.println(
-                    "Which one?\n    1. Add\n    2. Minus\n    3. Multiply\n    4. Divide \n    5. Power\n    6. Max");
+                    "Which one?\n    1. Add\n    2. Minus\n    3. Multiply\n    4. Divide \n    5. Power\n    6. Max\n 7. Min");
             String multiOperator = System.console().readLine();
             System.out.print("Please enter numbers through the space bar: ");
             String givenString = System.console().readLine();
@@ -79,8 +79,11 @@ public class Calculator {
             case "6":
                 res = max(givenString);
                 break;
+            case "7":
+                res = min(givenString);
+                break;
             default:
-                System.out.println("Wrong option. Select a number from 1 to 5.");
+                System.out.println("Wrong option. Select a number from 1 to 7.");
                 System.exit(0);
             }
             break;
@@ -202,5 +205,19 @@ public class Calculator {
                 break;
         }
         return Math.max(firstNumber, secondNumber);
+    }
+    
+     protected double min(String givenString) {
+        double firstNumber = Double.MAX_VALUE;
+        double secondNumber = Double.MAX_VALUE;
+        for (String someItem : givenString.split(" ")) {
+            if (firstNumber == Double.MAX_VALUE)
+                firstNumber = Double.valueOf(someItem);
+            else if (secondNumber == Double.MAX_VALUE)
+                secondNumber = Double.valueOf(someItem);
+            else
+                break;
+        }
+        return Math.min(firstNumber, secondNumber);
     }
 }
