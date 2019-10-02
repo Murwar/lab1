@@ -28,12 +28,6 @@ public class Calculator {
                 res = squareRoot(number);
                 break;
             case "3":
-                res = cosOperator(number);
-                break;
-            case "4":
-                res = sinOpertor(number);
-                break;
-            case "5":
                 res = log(number);
                 break;
             case "6":
@@ -178,15 +172,15 @@ public class Calculator {
         return Math.sqrt(Double.valueOf(givenString));
     }
 
-    protected double module(String givenString) {
-        return Math.abs(Double.valueOf(givenString));
-    }
-
     protected void showResult() {
         System.out.println("Result of evaluate: " + res);
     }
 
     protected double round(String givenString) {
         return Math.round(Double.valueOf(givenString));
+    }
+    
+    protected double module(String givenString) {
+        return Math.abs(Double.valueOf(givenString));
     }
 }

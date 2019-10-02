@@ -88,7 +88,7 @@ public class AppTest {
 
     @Test
     public void testRound() {
-        double res = testCalculator.round("8.22");
-        assertEquals(8.0, res, 0.0);
+        double res = testCalculator.round("4.2");
+        assertEquals(4.0, res, 0.0);
     }
 }
