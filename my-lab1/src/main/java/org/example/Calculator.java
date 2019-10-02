@@ -13,7 +13,7 @@ public class Calculator {
 
         case "1":
             System.out.println(
-                    "Which one?\n    1. Square\n    2. Square root\n    3. Cos\n    4. Sin \n    5. Log\n    6. Module\n    7. Tg");
+                    "Which one?\n    1. Square\n    2. Square root\n    3. Cos\n    4. Sin \n    5. Log\n    6. Module\n    7. Tg\n    8. Ctg");
             String monoOperator = System.console().readLine();
             System.out.print("Please enter a number: ");
             String number = System.console().readLine();
@@ -42,9 +42,12 @@ public class Calculator {
             case "7":
                 res = tangOperator(number);
                 break;
+                case "8":
+                res = ctngOperator(number);
+                break;
 
             default:
-                System.out.println("Wrong option. Select a number from 1 to 6.");
+                System.out.println("Wrong option. Select a number from 1 to 8.");
                 System.exit(0);
             }
             break;
@@ -157,6 +160,10 @@ public class Calculator {
 
     protected double tangOperator(String givenString) {
         return Math.tan(Double.valueOf(givenString));
+    }
+
+    protected double ctngOperator(String givenString) {
+        return 1/Math.tan(Double.valueOf(givenString));
     }
 
     protected double square(String givenString) {
