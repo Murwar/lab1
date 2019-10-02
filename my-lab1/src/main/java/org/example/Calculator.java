@@ -1,7 +1,5 @@
 package org.example;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class Calculator {
 
     private double res;
