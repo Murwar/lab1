@@ -36,7 +36,7 @@ public class Calculator {
             case "7":
                 res = tangOperator(number);
                 break;
-                case "8":
+            case "8":
                 res = ctngOperator(number);
                 break;
 
@@ -157,7 +157,7 @@ public class Calculator {
     }
 
     protected double ctngOperator(String givenString) {
-        return 1/Math.tan(Double.valueOf(givenString));
+        return 1 / Math.tan(Double.valueOf(givenString));
     }
 
     protected double square(String givenString) {
@@ -171,5 +171,9 @@ public class Calculator {
 
     protected void showResult() {
         System.out.println("Result of evaluate: " + res);
+    }
+
+    protected double module(String givenString) {
+        return Math.abs(Double.valueOf(givenString));
     }
 }
