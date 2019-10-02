@@ -50,11 +50,28 @@ public class AppTest {
         assertEquals(4.0, res, 0.0);
     }
 
+    @Test
+    public void testCos() {
+        double res = testCalculator.cosOperator("0");
+        assertEquals(1.0, res, 0.0);
+    }
+
+    @Test
+    public void testSin() {
+        double res = testCalculator.sinOpertor("0");
+        assertEquals(0.0, res, 0.0);
+    }
 
     @Test
     public void testLog() {
         double res = testCalculator.log("1");
         assertEquals(0.0, res, 0.0);
+    }
+
+    @Test
+    public void testModule() {
+        double res = testCalculator.module("-4");
+        assertEquals(4.0, res, 0.0);
     }
 
     @Test
@@ -67,5 +84,11 @@ public class AppTest {
     public void testForDivide() {
         assertTrue(testHandler.checkNumberForDivideBoolean(19.2));
         assertFalse(testHandler.checkNumberForDivideBoolean(0.0));
+    }
+
+    @Test
+    public void testRound() {
+        double res = testCalculator.round("4.2");
+        assertEquals(4.0, res, 0.0);
     }
 }
