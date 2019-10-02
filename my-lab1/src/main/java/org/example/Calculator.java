@@ -13,7 +13,7 @@ public class Calculator {
 
         case "1":
             System.out.println(
-                    "Which one?\n    1. Square\n    2. Square root\n    3. Cos\n    4. Sin \n    5. Log\n    6. Module");
+                    "Which one?\n    1. Square\n    2. Square root\n    3. Cos\n    4. Sin \n    5. Log\n    6. Module\n    7. Tg");
             String monoOperator = System.console().readLine();
             System.out.print("Please enter a number: ");
             String number = System.console().readLine();
@@ -38,6 +38,9 @@ public class Calculator {
                 break;
             case "6":
                 res = module(number);
+                break;
+            case "7":
+                res = tangOperator(number);
                 break;
 
             default:
@@ -84,8 +87,7 @@ public class Calculator {
         }
     }
 
-    
-    protected double add(String givenString) {    
+    protected double add(String givenString) {
         double res = 0;
         for (String someNumber : givenString.split(" ")) {
             nHandler.simpleCheck(Double.valueOf(someNumber));
@@ -151,6 +153,10 @@ public class Calculator {
 
     protected double cosOperator(String givenString) {
         return Math.cos(Double.valueOf(givenString));
+    }
+
+    protected double tangOperator(String givenString) {
+        return Math.tan(Double.valueOf(givenString));
     }
 
     protected double square(String givenString) {
