@@ -85,4 +85,10 @@ public class AppTest {
         assertTrue(testHandler.checkNumberForDivideBoolean(19.2));
         assertFalse(testHandler.checkNumberForDivideBoolean(0.0));
     }
+
+    @Test
+    public void testRound() {
+        double res = testCalculator.round("8.22");
+        assertEquals(8.0, res, 0.0);
+    }
 }
