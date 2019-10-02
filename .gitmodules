@@ -1,0 +1,3 @@
+[submodule "GitLink"]
+	path = GitLink
+	url = git://github.com/WolframResearch/GitLink
