@@ -1,5 +1,7 @@
 package org.example;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class Calculator {
 
     private double res;
@@ -50,7 +52,8 @@ public class Calculator {
             break;
 
         case "2":
-            System.out.println("Which one?\n    1. Add\n    2. Minus\n    3. Multiply\n    4. Divide \n    5. Power");
+            System.out.println(
+                    "Which one?\n    1. Add\n    2. Minus\n    3. Multiply\n    4. Divide \n    5. Power\n    6. Max");
             String multiOperator = System.console().readLine();
             System.out.print("Please enter numbers through the space bar: ");
             String givenString = System.console().readLine();
@@ -72,6 +75,9 @@ public class Calculator {
                 break;
             case "5":
                 res = power(givenString);
+                break;
+            case "6":
+                res = max(givenString);
                 break;
             default:
                 System.out.println("Wrong option. Select a number from 1 to 5.");
@@ -179,8 +185,22 @@ public class Calculator {
     protected double round(String givenString) {
         return Math.round(Double.valueOf(givenString));
     }
-    
+
     protected double module(String givenString) {
         return Math.abs(Double.valueOf(givenString));
+    }
+
+    protected double max(String givenString) {
+        double firstNumber = Double.MIN_VALUE;
+        double secondNumber = Double.MIN_VALUE;
+        for (String someItem : givenString.split(" ")) {
+            if (firstNumber == Double.MIN_VALUE)
+                firstNumber = Double.valueOf(someItem);
+            else if (secondNumber == Double.MIN_VALUE)
+                secondNumber = Double.valueOf(someItem);
+            else
+                break;
+        }
+        return Math.max(firstNumber, secondNumber);
     }
 }
